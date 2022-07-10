@@ -1,0 +1,117 @@
+{
+  "productName": "express",
+  "tabs": [
+    {
+      "name": "methods",
+      "blocks": [
+        {
+          "name": "express.general_methods",
+          "tests": [
+            "express.create",
+            "express.confirm",
+            "express.info",
+            "express.search"
+          ]
+        },
+        {
+          "name": "express.cancel_methods",
+          "tests": [
+            "express.cancel_state@full",
+            "express.cancel",
+            "express.skip"
+          ]
+        },
+        {
+          "name": "express.edit_methods",
+          "tests": [
+            "express.edit@full",
+            "express.edit_after_confirmation",
+            "express.get_result_edit_after_confirmation"
+          ]
+        },
+        {
+          "name": "express.driver_methods",
+          "tests": [
+            "express.phone",
+            "express.position"
+          ]
+        },
+        {
+          "name": "express.info_methods",
+          "tests": [
+            "express.info",
+            "express.infos",
+            "express.journal",
+            "express.eta"
+          ]
+        },
+        {
+          "name": "express.codes_methods",
+          "tests": [
+            "express.code",
+            "express.act"
+          ]
+        },
+        {
+          "name": "express.estimating_methods",
+          "tests": [
+            "express.estimating",
+            "express.get_tariffs"
+          ]
+        },
+        {
+          "name": "express.robots_methods",
+          "tests": [
+            "express.robot_check",
+            "express.robot_open"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scenarios",
+      "blocks": [
+        {
+          "name": "express.delivered_scenarios",
+          "tests": [
+            "express.delivered",
+            "express.delivered_poa"
+          ]
+        },
+        {
+          "name": "express.returned_scenarios",
+          "tests": [
+            "express.returned",
+            "express.cancelled_with_items_on_hands"
+          ]
+        },
+        {
+          "name": "express.cancelled_scenarios",
+          "tests": [
+            "express.cancelled_free",
+            "express.cancelled_paid"
+          ]
+        },
+        {
+          "name": "express.performer_cancelled_scenarios",
+          "tests": [
+            "express.performer_not_found",
+            "express.cancelled_by_taxi"
+          ]
+        },
+        {
+          "name": "express.late_confirmed_scenarios",
+          "tests": [
+            "express.failed@full"
+          ]
+        },
+        {
+          "name": "express.reorder_scenarios",
+          "tests": [
+            "express.reorder@full"
+          ]
+        }
+      ]
+    }
+  ]
+}

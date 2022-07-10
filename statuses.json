@@ -1,0 +1,999 @@
+{
+  "mappings": [
+    {
+      "operator_id": "top-delivery",
+      "rules": [
+        {
+          "pattern": "1 -*",
+          "special_comment": "Заявка принята в обработку",
+          "status": "CREATED"
+        },
+        {
+          "pattern": "2 - В пути в ТД",
+          "special_comment": "Ожидается поступление на склад",
+          "status": "SENDER_WAIT_FULFILLMENT"
+        },
+        {
+          "pattern": "2 - Получен в ТД",
+          "special_comment": "На складе службы доставки",
+          "status": "DELIVERY_AT_START"
+        },
+        {
+          "pattern": "2 - Готов к отправке",
+          "special_comment": "Запланирован на доставку",
+          "status": "DELIVERY_TRACK_RECEIVED"
+        },
+        {
+          "pattern": "5-*",
+          "special_comment": "Заказ подготовлен на магистраль",
+          "status": "READY_FOR_TRACK"
+        },
+        {
+          "pattern": "2 - В пути в город",
+          "special_comment": "Доставляется в город получателя",
+          "status": "ON_THE_TRACKK"
+        },
+        {
+          "pattern": "9 -*",
+          "special_comment": "В городе получателя",
+          "status": "DELIVERY_ARRIVED"
+        },
+        {
+          "pattern": "2 - Получен в городе",
+          "special_comment": "Посылка доставляется клиенту",
+          "status": "DELIVERY_TRANSPORTATION_RECIPIENT"
+        },
+        {
+          "pattern": "2 - Работа с заказом завершена",
+          "special_comment": "Доставлен",
+          "status": "DELIVERY_DELIVERED"
+        },
+        {
+          "pattern": "22 - *",
+          "special_comment": "Доставлен полностью - подтверждено",
+          "status": "DELIVERED_FINISH"
+        },
+        {
+          "pattern": "6 - *",
+          "special_comment": "Доставка перенесена",
+          "status": "DELIVERY_UPDATED"
+        },
+        {
+          "pattern": "26 - *",
+          "special_comment": "Неудачная попытка вручения",
+          "status": "DELIVERY_ATTEMPT_FAILED"
+        },
+        {
+          "pattern": "10 - Полностью выполнен",
+          "special_comment": " Доставлен - подтверждено",
+          "status": " DELIVERED_FINISH"
+        },
+        {
+          "pattern": "13 - Полностью в розыске",
+          "special_comment": "Заказ не найден",
+          "status": "NOT_FOUND"
+        },
+        {
+          "pattern": "2 - Получен на складе в городе",
+          "special_comment": "На складе службы доставки",
+          "status": "DELIVERY_AT_START"
+        },
+        {
+          "pattern": "13 - Полностью утерян",
+          "special_comment": "Утерян",
+          "status": "LOST"
+        }
+      ]
+    },
+    {
+      "operator_id": "strizh",
+      "rules": [
+        {
+          "pattern": "201-*",
+          "special_comment": "Заявка принята в обработку",
+          "status": "CREATED"
+        },
+        {
+          "pattern": "222-*",
+          "special_comment": "Запланирован на доставку",
+          "status": "DELIVERY_TRACK_RECEIVED"
+        },
+        {
+          "pattern": "224-*",
+          "special_comment": "Откреплен от рейса",
+          "status": "ORDER_CANCELLED"
+        },
+        {
+          "pattern": "221-*",
+          "special_comment": "Посылка доставляется клиенту",
+          "status": "DELIVERY_TRANSPORTATION_RECIPIENT"
+        },
+        {
+          "pattern": "231-*",
+          "special_comment": "Доставлен",
+          "status": "DELIVERY_DELIVERED"
+        },
+        {
+          "pattern": "237-*",
+          "special_comment": "Доставлен частично",
+          "status": "PARTIALLY_DELIVERED"
+        },
+        {
+          "pattern": "232-*",
+          "special_comment": "Доставка перенесена",
+          "status": "DELIVERY_UPDATED"
+        },
+        {
+          "pattern": "236-*",
+          "special_comment": "Доставка перенесена по просьбе клиента",
+          "status": "DELIVERY_UPDATED_BY_RECIPIENT"
+        },
+        {
+          "pattern": "238-*",
+          "special_comment": "Доставка отменена по просьбе клиента",
+          "status": "CANCELLED_BY_RECIPIENT"
+        },
+        {
+          "pattern": "235-*",
+          "special_comment": "Доставка отменена клиентом",
+          "status": "CANCELLED_BY_RECIPIENT"
+        },
+        {
+          "pattern": "410-*",
+          "special_comment": "Заявка отклонена",
+          "status": "DELIVERY_REJECTED"
+        },
+        {
+          "pattern": "301-*",
+          "special_comment": "Доставлен полностью - подтверждено",
+          "status": "DELIVERED_FINISH"
+        },
+        {
+          "pattern": "302-*",
+          "special_comment": "Доставлен частично - подтверждено",
+          "status": "PARTIALLY_DELIVERED_CONFIRMED"
+        },
+        {
+          "pattern": "305-*",
+          "special_comment": "Отмена - подтверждено",
+          "status": "CANCELLED"
+        },
+        {
+          "pattern": "213-*",
+          "special_comment": "Нет на складе",
+          "status": "OUT_OF_STOCK"
+        },
+        {
+          "pattern": "214-*",
+          "special_comment": "Ожидается поступление",
+          "status": "SENDER_WAIT_FULFILLMENT"
+        },
+        {
+          "pattern": "212-*",
+          "special_comment": "Заказ частично на складе",
+          "status": "PARTIALLY_IN_WAREHOUSE"
+        },
+        {
+          "pattern": "211-*",
+          "special_comment": "На складе службы доставки",
+          "status": "DELIVERY_AT_START"
+        },
+        {
+          "pattern": "218-*",
+          "special_comment": "Заказ подготовлен на магистраль",
+          "status": "READY_FOR_TRACK"
+        },
+        {
+          "pattern": "219-*",
+          "special_comment": "Доставляется в город получателя",
+          "status": "ON_THE_TRACK"
+        },
+        {
+          "pattern": "311-*",
+          "special_comment": "Готовится к возврату",
+          "status": "RETURN_PREPARING"
+        },
+        {
+          "pattern": "314-*",
+          "special_comment": "Подготовлен к возврату",
+          "status": "SORTING_CENTER_RETURN_PREPARING_SENDER"
+        },
+        {
+          "pattern": "312-*",
+          "special_comment": "Возврат на пути к магазину",
+          "status": "SORTING_CENTER_RETURN_TRANSFERRED"
+        },
+        {
+          "pattern": "313-*",
+          "special_comment": "Товар возвращен",
+          "status": "SORTING_CENTER_RETURN_RETURNED"
+        }
+      ]
+    },
+    {
+      "operator_id": "yd",
+      "rules": [
+        {
+          "pattern": "DRAFT",
+          "special_comment": "Заказ загружен",
+          "status": "DRAFT"
+        },
+        {
+          "pattern": "VALIDATING",
+          "special_comment": "Заказ находится на проверке",
+          "status": "VALIDATING"
+        },
+        {
+          "pattern": "VALIDATING_ERROR",
+          "special_comment": "Необходимо пересоздать заказ",
+          "status": "VALIDATING_ERROR"
+        },
+        {
+          "pattern": "CREATED",
+          "special_comment": "Заказ подтвержден",
+          "status": "CREATED"
+        },
+        {
+          "pattern": "DELIVERY_PROCESSING_STARTED",
+          "special_comment": "Заказ создан в сортировочном центре",
+          "status": "DELIVERY_PROCESSING_STARTED"
+        },
+        {
+          "pattern": "SORTING_CENTER_PROCESSING_STARTED",
+          "special_comment": "Заказ обрабатывается в сортировочном центре",
+          "status": "SORTING_CENTER_PROCESSING_STARTED"
+        },
+        {
+          "pattern": "SORTING_CENTER_TRACK_RECEIVED",
+          "special_comment": "Заказ создан в сортировочном центре",
+          "status": "DELIVERY_PROCESSING_STARTED"
+        },
+        {
+          "pattern": "SORTING_CENTER_LOADED",
+          "special_comment": "Заказ подтвержден в сортировочном центре",
+          "status": "DELIVERY_PROCESSING_STARTED"
+        },
+        {
+          "pattern": "DELIVERY_TRACK_RECEIVED",
+          "special_comment": "Заказ создан в системе службы доставки",
+          "status": "DELIVERY_TRACK_RECEIVED"
+        },
+        {
+          "pattern": "SENDER_WAIT_FULFILLMENT",
+          "special_comment": "Ожидается на складе",
+          "status": "SENDER_WAIT_FULFILLMENT"
+        },
+        {
+          "pattern": "DELIVERY_LOADED",
+          "special_comment": "Заказ подтвержден",
+          "status": "DELIVERY_LOADED"
+        },
+        {
+          "pattern": "DELIVERY_AT_START",
+          "special_comment": "На складе службы доставки",
+          "status": "DELIVERY_AT_START"
+        },
+        {
+          "pattern": "DELIVERY_AT_START_SORT",
+          "special_comment": "Заказ готовится к отправке",
+          "status": "DELIVERY_AT_START_SORT"
+        },
+        {
+          "pattern": "SORTING_CENTER_TRANSMITTED",
+          "special_comment": "Отправлен в службу доставки",
+          "status": "SORTING_CENTER_TRANSMITTED"
+        },
+        {
+          "pattern": "DELIVERY_TRANSPORTATION",
+          "special_comment": "Доставляется в город получателя",
+          "status": "ON_THE_TRACK"
+        },
+        {
+          "pattern": "DELIVERY_ARRIVED",
+          "special_comment": "В городе получателя",
+          "status": "DELIVERY_ARRIVED"
+        },
+        {
+          "pattern": "DELIVERY_TRANSPORTATION_RECIPIENT",
+          "special_comment": "Посылка доставляется клиенту",
+          "status": "DELIVERY_TRANSPORTATION_RECIPIENT"
+        },
+        {
+          "pattern": "DELIVERY_STORAGE_PERIOD_EXTENDED",
+          "special_comment": "Срок хранения заказа в службе доставки увеличен",
+          "status": "DELIVERY_STORAGE_PERIOD_EXTENDED"
+        },
+        {
+          "pattern": "DELIVERY_STORAGE_PERIOD_EXPIRED",
+          "special_comment": "Срок хранения заказа в службе доставки истек",
+          "status": "DELIVERY_STORAGE_PERIOD_EXPIRED"
+        },
+        {
+          "pattern": "DELIVERY_UPDATED_BY_SHOP",
+          "special_comment": "Доставка перенесена отправителем",
+          "status": "DELIVERY_UPDATED"
+        },
+        {
+          "pattern": "DELIVERY_UPDATED_BY_RECIPIENT",
+          "special_comment": "Доставка перенесена по просьбе клиента",
+          "status": "DELIVERY_UPDATED_BY_RECIPIENT"
+        },
+        {
+          "pattern": "DELIVERY_UPDATED_BY_DELIVERY",
+          "special_comment": "Доставка перенесена службой доставки",
+          "status": "DELIVERY_UPDATED_BY_DELIVERY"
+        },
+        {
+          "pattern": "DELIVERY_ARRIVED_PICKUP_POINT",
+          "special_comment": "В пункте самовывоза",
+          "status": "DELIVERY_ARRIVED_PICKUP_POINT"
+        },
+        {
+          "pattern": "DELIVERY_TRANSMITTED_TO_RECIPIENT",
+          "special_comment": "Доставлен",
+          "status": "DELIVERY_DELIVERED"
+        },
+        {
+          "pattern": "DELIVERY_DELIVERED",
+          "special_comment": "Доставлен полностью - подтверждено",
+          "status": "DELIVERED_FINISH"
+        },
+        {
+          "pattern": "DELIVERY_ATTEMPT_FAILED",
+          "special_comment": "Неудачная попытка вручения",
+          "status": "DELIVERY_ATTEMPT_FAILED"
+        },
+        {
+          "pattern": "DELIVERY_CAN_NOT_BE_COMPLETED",
+          "special_comment": "Заказ не может быть доставлен",
+          "status": "DELIVERY_CAN_NOT_BE_COMPLETED"
+        },
+        {
+          "pattern": "RETURN_PREPARING",
+          "special_comment": "Готовится к возврату",
+          "status": "RETURN_PREPARING"
+        },
+        {
+          "pattern": "SORTING_CENTER_AT_START",
+          "special_comment": "На складе службы доставки",
+          "status": "DELIVERY_AT_START"
+        },
+        {
+          "pattern": "SORTING_CENTER_AWAITING_CLARIFICATION",
+          "special_comment": "Ожидаются уточнения по заказу в СЦ",
+          "status": "SORTING_CENTER_AWAITING_CLARIFICATION"
+        },
+        {
+          "pattern": "SORTING_CENTER_PREPARED",
+          "special_comment": "Готов к отправке в службу доставки",
+          "status": "SORTING_CENTER_PREPARED"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_PREPARING",
+          "special_comment": "Готовится к возврату",
+          "status": "SORTING_CENTER_RETURN_PREPARING"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_RFF_ARRIVED_FULFILLMENT",
+          "special_comment": "Возвращен на склад",
+          "status": "SORTING_CENTER_RETURN_RFF_ARRIVED_FULFILLMENT"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_ARRIVED",
+          "special_comment": "Возвратный заказ на складе сортировочного центра",
+          "status": "SORTING_CENTER_RETURN_ARRIVED"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_PREPARING_SENDER",
+          "special_comment": "Готов для передачи магазину",
+          "status": "SORTING_CENTER_RETURN_PREPARING_SENDER"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_TRANSFERRED",
+          "special_comment": "Возвратный заказ передан на доставку в магазин",
+          "status": "SORTING_CENTER_RETURN_TRANSFERRED"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_RETURNED",
+          "special_comment": "Возвращен в магазин",
+          "status": "SORTING_CENTER_RETURN_RETURNED"
+        },
+        {
+          "pattern": "SORTING_CENTER_CANCELED",
+          "special_comment": "Отменен сортировочным центром",
+          "status": "SORTING_CENTER_CANCELED"
+        },
+        {
+          "pattern": "SORTING_CENTER_ERROR",
+          "special_comment": "Ошибка создания заказа в сортировочном центре",
+          "status": "SORTING_CENTER_ERROR"
+        },
+        {
+          "pattern": "LOST",
+          "special_comment": "Утерян",
+          "status": "LOST"
+        },
+        {
+          "pattern": "UNEXPECTED",
+          "special_comment": "Статус уточняется",
+          "status": "UNEXPECTED"
+        },
+        {
+          "pattern": "CANCELLED_USER",
+          "special_comment": "Отменен пользователем",
+          "status": "CANCELLED_USER"
+        },
+        {
+          "pattern": "CANCELLED",
+          "special_comment": "Заказ отменен",
+          "status": "CANCELLED"
+        },
+        {
+          "pattern": "VALIDATING_ERROR",
+          "special_comment": "Необходимо пересоздать заказ",
+          "status": "VALIDATING_ERROR"
+        },
+        {
+          "pattern": "ERROR",
+          "special_comment": "Ошибка",
+          "status": "ERROR"
+        },
+        {
+          "pattern": "NOT_FOUND",
+          "special_comment": "Заказ не найден",
+          "status": "NOT_FOUND"
+        }
+      ]
+    },
+    {
+      "operator_id": "external_operator",
+      "rules": [
+        {
+          "pattern": "move_until_demand",
+          "special_comment": "Заказ откатили в доставку по клику",
+          "status": "MOVE_UNTIL_DEMAND"
+        }
+      ]
+    },
+    {
+      "operator_id": "yd_new",
+      "rules": [
+        {
+          "pattern": "DRAFT",
+          "special_comment": "Создан черновик заявки",
+          "status": "DRAFT"
+        },
+        {
+          "pattern": "VALIDATING",
+          "special_comment": "Заявка обрабатывается",
+          "status": "VALIDATING"
+        },
+        {
+          "pattern": "VALIDATING_ERROR*",
+          "special_comment": "Ошибка подтверждения заявки, пересоздайте заказ",
+          "status": "VALIDATING_ERROR"
+        },
+        {
+          "pattern": "CREATED",
+          "special_comment": "Заказ создан",
+          "status": "CREATED"
+        },
+        {
+          "pattern": "DELIVERY_PROCESSING_STARTED",
+          "special_comment": "Заказ создаётся в сортировочном центре",
+          "status": "DELIVERY_PROCESSING_STARTED"
+        },
+        {
+          "pattern": "SORTING_CENTER_TRACK_RECEIVED",
+          "special_comment": "Заказ создан в сортировочном центре",
+          "status": "DELIVERY_PROCESSING_STARTED"
+        },
+        {
+          "pattern": "SORTING_CENTER_LOADED",
+          "special_comment": "Заказ подтверждён в сортировочном центре",
+          "status": "DELIVERY_PROCESSING_STARTED"
+        },
+        {
+          "pattern": "DELIVERY_TRACK_RECEIVED",
+          "special_comment": "Заказ создан в системе службы доставки",
+          "status": "DELIVERY_TRACK_RECEIVED"
+        },
+        {
+          "pattern": "SENDER_WAIT_FULFILLMENT",
+          "special_comment": "Ожидается поступление на склад",
+          "status": "SENDER_WAIT_FULFILLMENT"
+        },
+        {
+          "pattern": "DELIVERY_LOADED",
+          "special_comment": "Заказ подтверждён",
+          "status": "DELIVERY_LOADED"
+        },
+        {
+          "pattern": "DELIVERY_AT_START",
+          "special_comment": "Заказ поступил в сортировочный центр",
+          "status": "DELIVERY_AT_START"
+        },
+        {
+          "pattern": "DELIVERY_TRANSPORTATION",
+          "special_comment": "Доставляется в город получателя",
+          "status": "DELIVERY_TRANSPORTATION"
+        },
+        {
+          "pattern": "DELIVERY_ARRIVED",
+          "special_comment": "Заказ поступил в город получателя",
+          "status": "DELIVERY_ARRIVED"
+        },
+        {
+          "pattern": "DELIVERY_TRANSPORTATION_RECIPIENT",
+          "special_comment": "Посылка доставляется клиенту",
+          "status": "DELIVERY_TRANSPORTATION_RECIPIENT"
+        },
+        {
+          "pattern": "DELIVERY_STORAGE_PERIOD_EXTENDED",
+          "special_comment": "Срок хранения заказа в службе доставки увеличен",
+          "status": "DELIVERY_STORAGE_PERIOD_EXTENDED"
+        },
+        {
+          "pattern": "DELIVERY_STORAGE_PERIOD_EXPIRED",
+          "special_comment": "Срок хранения заказа в службе доставки истек",
+          "status": "DELIVERY_STORAGE_PERIOD_EXPIRED"
+        },
+        {
+          "pattern": "DELIVERY_UPDATED_BY_SHOP",
+          "special_comment": "Доставка перенесена отправителем",
+          "status": "DELIVERY_UPDATED"
+        },
+        {
+          "pattern": "DELIVERY_UPDATED_BY_RECIPIENT",
+          "special_comment": "Доставка перенесена по просьбе клиента",
+          "status": "DELIVERY_UPDATED_BY_RECIPIENT"
+        },
+        {
+          "pattern": "DELIVERY_UPDATED_BY_DELIVERY",
+          "special_comment": "Доставка перенесена службой доставки",
+          "status": "DELIVERY_UPDATED_BY_DELIVERY"
+        },
+        {
+          "pattern": "DELIVERY_ARRIVED_PICKUP_POINT",
+          "special_comment": "В пункте самовывоза",
+          "status": "DELIVERY_ARRIVED_PICKUP_POINT"
+        },
+        {
+          "pattern": "DELIVERY_TRANSMITTED_TO_RECIPIENT",
+          "special_comment": "Заказ передан клиенту",
+          "status": "DELIVERY_TRANSMITTED_TO_RECIPIENT"
+        },
+        {
+          "pattern": "DELIVERY_DELIVERED*",
+          "special_comment": "Доставлен",
+          "status": "DELIVERY_DELIVERED"
+        },
+        {
+          "pattern": "DELIVERY_ATTEMPT_FAILED",
+          "special_comment": "Неудачная попытка вручения",
+          "status": "DELIVERY_ATTEMPT_FAILED"
+        },
+        {
+          "pattern": "DELIVERY_CAN_NOT_BE_COMPLETED*",
+          "special_comment": "Заказ не может быть доставлен",
+          "status": "DELIVERY_CAN_NOT_BE_COMPLETED"
+        },
+        {
+          "pattern": "RETURN_PREPARING",
+          "special_comment": "Готовится к возврату",
+          "status": "RETURN_PREPARING"
+        },
+        {
+          "pattern": "SORTING_CENTER_AT_START",
+          "special_comment": "На складе сортировочного центра",
+          "status": "SORTING_CENTER_AT_START"
+        },
+        {
+          "pattern": "SORTING_CENTER_PREPARED",
+          "special_comment": "Готов к отправке в службу доставки",
+          "status": "SORTING_CENTER_PREPARED"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_PREPARING",
+          "special_comment": "Готовится к возврату",
+          "status": "SORTING_CENTER_RETURN_PREPARING"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_RFF_ARRIVED_FULFILLMENT",
+          "special_comment": "Возвращен на сортировочный центр",
+          "status": "SORTING_CENTER_RETURN_RFF_ARRIVED_FULFILLMENT"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_ARRIVED",
+          "special_comment": "Возврат на складе сортировочного центра",
+          "status": "SORTING_CENTER_RETURN_ARRIVED"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_PREPARING_SENDER",
+          "special_comment": "Готов для передачи магазину",
+          "status": "SORTING_CENTER_RETURN_PREPARING_SENDER"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_TRANSFERRED",
+          "special_comment": "Возврат передан на доставку в магазин",
+          "status": "SORTING_CENTER_RETURN_TRANSFERRED"
+        },
+        {
+          "pattern": "SORTING_CENTER_RETURN_RETURNED",
+          "special_comment": "Возвращен в магазин",
+          "status": "SORTING_CENTER_RETURN_RETURNED*"
+        },
+        {
+          "pattern": "SORTING_CENTER_CANCELED",
+          "special_comment": "Отменен сортировочным центром",
+          "status": "SORTING_CENTER_CANCELED"
+        },
+        {
+          "pattern": "SORTING_CENTER_ERROR",
+          "special_comment": "Ошибка создания заказа в сортировочном центре",
+          "status": "SORTING_CENTER_ERROR"
+        },
+        {
+          "pattern": "UNEXPECTED",
+          "special_comment": "Статус уточняется",
+          "status": "UNEXPECTED"
+        },
+        {
+          "pattern": "CANCELLED_USER",
+          "special_comment": "Отменен пользователем",
+          "status": "CANCELLED_USER"
+        },
+        {
+          "pattern": "CANCELLED*",
+          "special_comment": "Заказ отменен",
+          "status": "CANCELLED*"
+        },
+        {
+          "pattern": "ERROR",
+          "special_comment": "Ошибка",
+          "status": "ERROR"
+        },
+        {
+          "pattern": "NOT_FOUND",
+          "special_comment": "Заказ не найден",
+          "status": "NOT_FOUND"
+        }
+      ]
+    },
+    {
+      "operator_id": "lavka",
+      "rules": [
+        {
+          "pattern": "canceled",
+          "special_comment": "Отменен",
+          "status": "CANCELLED_USER"
+        },
+        {
+          "pattern": "reserved",
+          "special_comment": "Место под посылку зарезервировано",
+          "status": "RESERVED"
+        },
+        {
+          "pattern": "created",
+          "special_comment": "Для посылки заполнен штрихкод",
+          "status": "CREATED"
+        },
+        {
+          "pattern": "expecting_delivery",
+          "special_comment": "Ожидается поставка",
+          "status": "EXPECTING_DELIVERY"
+        },
+        {
+          "pattern": "in_depot",
+          "special_comment": "Посылка прибыла на склад",
+          "status": "DELIVERY_ARRIVED_PICKUP_POINT"
+        },
+        {
+          "pattern": "ordered",
+          "special_comment": "Пользователь положил посылку в корзину",
+          "status": "ORDERED"
+        },
+        {
+          "pattern": "auto_ordered",
+          "special_comment": "Заказ автоматически создан в Лавке",
+          "status": "AUTO_ORDERED"
+        },
+        {
+          "pattern": "move_until_demand",
+          "special_comment": "Заказ откатили в доставку по клику",
+          "status": "MOVE_UNTIL_DEMAND"
+        },
+        {
+          "pattern": "ready_for_delivery",
+          "special_comment": "Заказ с посылкой собрали на лавке. Заказ ждёт курьера",
+          "status": "READY_FOR_DELIVERY"
+        },
+        {
+          "pattern": "courier_assigned",
+          "special_comment": "Курьер назначен",
+          "status": "COURIER_ASSIGNED"
+        },
+        {
+          "pattern": "order_cancelled",
+          "special_comment": "Пользователь отменил корзину, в которой была посылка",
+          "status": "ORDER_CANCELLED"
+        },
+        {
+          "pattern": "delivering",
+          "special_comment": "Посылка доставляется клиенту",
+          "status": "DELIVERY_TRANSPORTATION_RECIPIENT"
+        },
+        {
+          "pattern": "delivered",
+          "special_comment": "Доставлен",
+          "status": "DELIVERY_DELIVERED"
+        }
+      ]
+    },
+    {
+      "operator_id": "market1",
+      "rules": [
+        {
+          "pattern": "STARTED",
+          "special_comment": "Для посылки заполнен штрихкод",
+          "status": "CREATED"
+        },
+        {
+          "pattern": "TRACK_RECEIVED",
+          "special_comment": "Для посылки заполнен штрихкод",
+          "status": "TRACK_RECEIVED"
+        },
+        {
+          "pattern": "INFO_RECEIVED",
+          "special_comment": "Для посылки заполнен штрихкод",
+          "status": "INFO_RECEIVED"
+        },
+        {
+          "pattern": "TRANSIT_PICKUP",
+          "special_comment": "Заказ поступил в ПВЗ",
+          "status": "DELIVERY_ARRIVED_PICKUP_POINT"
+        },
+        {
+          "pattern": "TRANSIT_TRANSPORTATION_RECIPIENT",
+          "special_comment": "Заказ на доставке клиенту (статус от ПВЗ)",
+          "status": "TRANSIT_TRANSPORTATION_RECIPIENT"
+        },
+        {
+          "pattern": "OUT",
+          "special_comment": "Доставлен получателю или отгружен в след. партнера (статус от ПВЗ)",
+          "status": "OUT"
+        },
+        {
+          "pattern": "TRANSIT_STORAGE_PERIOD_EXPIRED",
+          "special_comment": "Истёк срок хранения",
+          "status": "TRANSIT_STORAGE_PERIOD_EXPIRED"
+        },
+        {
+          "pattern": "CANCELLED",
+          "special_comment": "Заказ отменён",
+          "status": "CANCELLED"
+        }
+      ]
+    },
+    {
+      "operator_id": "taxi-external",
+      "rules": [
+        {
+          "pattern": "estimating",
+          "special_comment": "Идет процесс оценки заявки (подбор типа автомобиля по параметрам груза и расчет стоимости).",
+          "status": "ESTIMATING"
+        },
+        {
+          "pattern": "new",
+          "special_comment": "Заказ подтвержден",
+          "status": "CREATED"
+        },
+        {
+          "pattern": "ready_for_approval",
+          "special_comment": "Заявка успешно оценена и ожидает подтверждения от клиента.",
+          "status": "READY_FOR_APPROVAL"
+        },
+        {
+          "pattern": "estimating_failed",
+          "special_comment": "Необходимо пересоздать заказ",
+          "status": "VALIDATING_ERROR"
+        },
+        {
+          "pattern": "accepted",
+          "special_comment": "Заявка подтверждена клиентом",
+          "status": "ACCEPTED"
+        },
+        {
+          "pattern": "performer_lookup",
+          "special_comment": "Заявка взята в обработку. Промежуточный статус перед созданием заказа.",
+          "status": "PERFOMER_LOOKUP"
+        },
+        {
+          "pattern": "performer_draft",
+          "special_comment": "Идет поиск исполнителя",
+          "status": "VALIDATING"
+        },
+        {
+          "pattern": "performer_found",
+          "special_comment": "Заказ создан в системе службы доставки",
+          "status": "DELIVERY_TRACK_RECEIVED"
+        },
+        {
+          "pattern": "performer_not_found",
+          "special_comment": "Не удалось найти водителя. Можно попробовать снова через некоторое время.",
+          "status": "VALIDATING_ERROR"
+        },
+        {
+          "pattern": "pickup_arrived",
+          "special_comment": "Водитель приехал в точку А.",
+          "status": "PICKUP_ARRIVAL"
+        },
+        {
+          "pattern": "ready_for_pickup_confirmation",
+          "special_comment": "Водитель ждет, когда отправитель назовет ему код подтверждения.",
+          "status": "READY_FOR_PICKIP_CONFIRMATION"
+        },
+        {
+          "pattern": "pickuped",
+          "special_comment": "Водитель успешно забрал груз.",
+          "status": "PICKUPED"
+        },
+        {
+          "pattern": "pay_waiting",
+          "special_comment": "Заказ ожидает оплаты (актуально для оплаты при получении).",
+          "status": "PARTIALLY_IN_WAREHOUSE"
+        },
+        {
+          "pattern": "delivery_arrived",
+          "special_comment": "Посылка доставляется клиенту",
+          "status": "DELIVERY_TRANSPORTATION_RECIPIENT"
+        },
+        {
+          "pattern": "ready_for_delivery_confirmation",
+          "special_comment": "Водитель ждет код подтверждения",
+          "status": "READY_FOR_DELIVERY_CONFIRMATION"
+        },
+        {
+          "pattern": "delivered",
+          "special_comment": "Доставлен",
+          "status": "DELIVERY_DELIVERED"
+        },
+        {
+          "pattern": "delivered_finish",
+          "special_comment": "Доставлен полностью - подтверждено",
+          "status": "DELIVERED_FINISH"
+        },
+        {
+          "pattern": "returning",
+          "special_comment": "Готовится к возврату в СЦ",
+          "status": "SORTING_CENTER_RETURN_PREPARING"
+        },
+        {
+          "pattern": "ready_for_return_confirmation",
+          "special_comment": "Возвратный заказ на складе сортировочного центра",
+          "status": "SORTING_CENTER_RETURN_ARRIVED"
+        },
+        {
+          "pattern": "return_arrived",
+          "special_comment": "Водитель приехал в точку возврата.",
+          "status": "RETURN_ARRIVED"
+        },
+        {
+          "pattern": "returned",
+          "special_comment": "Заказ возвращен в точку отправления",
+          "status": "SORTING_CENTER_RETURN_RETURNED"
+        },
+        {
+          "pattern": "returned_finish",
+          "special_comment": "Заказ завершен",
+          "status": "RETURNED_FINISH"
+        },
+        {
+          "pattern": "cancelled",
+          "special_comment": "Отмена - подтверждено",
+          "status": "CANCELLED"
+        },
+        {
+          "pattern": "cancelled_with_payment",
+          "special_comment": "Заказ был отменен клиентом платно (водитель уже приехал)",
+          "status": "CANCEL_WITH_PAYMENT"
+        },
+        {
+          "pattern": "cancelled_by_taxi",
+          "special_comment": "Водитель отменил заказ (до получения груза)",
+          "status": "CANCELLED_BY_TAXI"
+        },
+        {
+          "pattern": "cancelled_with_items_on_hands",
+          "special_comment": "Клиент платно отменил заявку без необходимости возврата груза",
+          "status": "CANCELLED_WITH_ITEMS_ON_HANDS"
+        },
+        {
+          "pattern": "failed",
+          "special_comment": "При выполнение заказа произошла ошибка, дальнейшее выполнение невозможно",
+          "status": "FAILED"
+        },
+        {
+          "pattern": "pending",
+          "special_comment": "Ждёт исполнения - подтверждено",
+          "status": "PENDING"
+        },
+        {
+          "pattern": "arrived",
+          "special_comment": "Курьер прибыл на точку",
+          "status": "ARRIVED"
+        },
+        {
+          "pattern": "visited",
+          "special_comment": "Передали/забрали товар из точки",
+          "status": "VISITED"
+        },
+        {
+          "pattern": "skipped",
+          "special_comment": "Возврат",
+          "status": "SKIPPED"
+        }
+      ]
+    },
+    {
+      "operator_id": "robowarehouse",
+      "rules": [
+        {
+          "pattern": "NEW",
+          "special_comment": "Заказ подтвержден",
+          "status": "NEW"
+        },
+        {
+          "pattern": "CANCELLED",
+          "special_comment": "Заказ отменен",
+          "status": "CANCELLED"
+        },
+        {
+          "pattern": "CANCELLING",
+          "special_comment": "Заказ отменен, груз на складе",
+          "status": "CANCELLING"
+        },
+        {
+          "pattern": "RESERVED",
+          "special_comment": "Груз принят на складе, но еще недоступен для клиента",
+          "status": "RESERVED"
+        },
+        {
+          "pattern": "EXPECTING_DELIVERY",
+          "special_comment": "Заказ ожидает доставки клиенту",
+          "status": "EXPECTING_DELIVERY"
+        },
+        {
+          "pattern": "RECEIVED_PARTIALLY",
+          "special_comment": "Заказ частично принят на складе",
+          "status": "RECEIVED_PARTIALLY"
+        },
+        {
+          "pattern": "RECEIVED",
+          "special_comment": "Заказ принят на складе",
+          "status": "RECEIVED"
+        },
+        {
+          "pattern": "DELIVERED_PARTIALLY",
+          "special_comment": "Заказ частично доставлен клиенту",
+          "status": "DELIVERED_PARTIALLY"
+        },
+        {
+          "pattern": "DELIVERED",
+          "special_comment": "Заказ доставлен клиенту",
+          "status": "DELIVERED"
+        },
+        {
+          "pattern": "DELIVERING",
+          "special_comment": "Заказ в процессе доставки клиенту",
+          "status": "DELIVERING"
+        },
+        {
+          "pattern": "IN_WAREHOUSE",
+          "special_comment": "Груз на складе",
+          "status": "IN_WAREHOUSE"
+        }
+      ]
+    }
+  ]
+}

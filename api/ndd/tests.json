@@ -1,0 +1,96 @@
+{
+  "productName": "ndd",
+  "tabs": [
+    {
+      "name": "methods",
+      "blocks": [
+        {
+          "name": "ndd.preparing_methods",
+          "tests": [
+            "ndd.estimating",
+            "ndd.intervals"
+          ]
+        },
+        {
+          "name": "ndd.spp_methods",
+          "tests": [
+            "ndd.geo_id",
+            "ndd.spp"
+          ]
+        },
+        {
+          "name": "ndd.express_general_methods",
+          "tests": [
+            "ndd.create",
+            "ndd.confirm",
+            "ndd.info",
+            "ndd.statuses"
+          ]
+        },
+        {
+          "name": "ndd.labels_acts_methods",
+          "tests": [
+            "ndd.labels",
+            "ndd.act"
+          ]
+        },
+        {
+          "name": "ndd.cancel_methods",
+          "tests": [
+            "ndd.cancel"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scenarios_dtd",
+      "blocks": [
+        {
+          "name": "ndd.delivered_scenarios",
+          "tests": [
+            "ndd.delivered",
+            "ndd.delivered_poa"
+          ]
+        },
+        {
+          "name": "ndd.cancelled_scenarios",
+          "tests": [
+            "ndd.cancelled_free",
+            "ndd.cancelled_paid"
+          ]
+        },
+        {
+          "name": "ndd.return_scenarios",
+          "tests": [
+            "ndd.return@full"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scenarios_spp",
+      "blocks": [
+        {
+          "name": "ndd.delivered_scenarios",
+          "tests": [
+            "ndd.delivered_spp",
+            "ndd.delivered_poa_spp"
+          ]
+        },
+        {
+          "name": "ndd.cancelled_scenarios",
+          "tests": [
+            "ndd.cancelled_free_spp",
+            "ndd.cancelled_paid_spp"
+          ]
+        },
+        {
+          "name": "ndd.return_scenarios",
+          "tests": [
+            "ndd.return_spp@full"
+          ]
+        }
+      ]
+    }
+  ]
+}
