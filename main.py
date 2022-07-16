@@ -5,6 +5,8 @@ from flask import Flask, make_response, jsonify
 from flask_cors import CORS
 from flask_pymongo import PyMongo
 
+from common import parse_json
+
 app = Flask(__name__)
 CORS(app)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/yandex"
@@ -18,11 +20,7 @@ from replica.sdd import routes
 from handlers import request
 from sandbox import routes
 from sandbox import user
-from sandbox.test import save
-
-
-def parse_json(data):
-    return json.loads(json_util.dumps(data))
+from sandbox.test import save, get
 
 
 @app.route('/mongo')

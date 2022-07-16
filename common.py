@@ -1,6 +1,7 @@
 import time
 
 import requests
+from bson import json_util
 from flask import request, Response, make_response, jsonify, json
 
 
@@ -45,3 +46,7 @@ def error(comment, code=400):
     r.headers['Content-Type'] = 'application/json'
     r.headers['Accept-Language'] = 'ru'
     return r
+
+
+def parse_json(data):
+    return json.loads(json_util.dumps(data))
